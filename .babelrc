@@ -1,0 +1,42 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "loose": true
+    }],
+    "stage-0",
+    "react"
+  ],
+  "env": {
+      "production": {
+        "presets": [
+          "babili"
+        ],
+        "plugins": [
+          "transform-decorators-legacy",
+          "transform-react-constant-elements",
+          "transform-react-remove-prop-types",
+          ["transform-runtime", {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }]
+        ]
+      },
+      "development": {
+        "plugins": [
+          "transform-react-jsx-self",
+          "transform-react-jsx-source",
+          "transform-decorators-legacy",
+          ["transform-runtime", {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }],
+          "react-hot-loader/babel"
+        ]
+      }
+    }
+}
